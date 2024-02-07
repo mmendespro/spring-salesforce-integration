@@ -1,0 +1,14 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: salesforce-client
+
+salesforce:
+  client:
+    enabled: true
+  username: ${SALESFORCE_USER}
+  password: ${SALESFORCE_PASSWORD}
+  consumer-key: ${SALESFORCE_CONSUMER_KEY}
+  consumer-secret: ${SALESFORCE_CONSUMER_SECRET}

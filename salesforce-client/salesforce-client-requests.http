@@ -1,0 +1,40 @@
+###
+# Query APEX API: Load Cases By AccountId
+GET http://localhost:8080/v1/apex/0018L00000KhVBPQA3/cases
+
+###
+# Query APEX API: Load Case By CaseId
+GET http://localhost:8080/v1/apex/cases/5008L000008CZgmQAG
+
+###
+# Query APEX API: Create Case
+POST http://localhost:8080/v1/apex/cases
+Content-Type: application/json
+
+{
+    "Subject": "Contestar Valores Fatura",
+    "Status": "New",
+    "Reason": "Contestação",
+    "Origin": "App",
+    "Description": "This is a test case created via api composite",
+    "OmniChannel__c": "true",
+    "AccountId": "0018L00000KhVBPQA3"
+}
+
+###
+# Query Composite API: Load Cases By AccountId
+GET http://localhost:8080/v1/composite/0018L00000KhVBPQA3/cases
+
+###
+# Query Composite API: Create Case
+POST http://localhost:8080/v1/composite/cases
+Content-Type: application/json
+
+{
+    "Subject": "Subject of the case",
+    "Status": "New",
+    "Reason": "Salesforce Reason",
+    "Origin": "App",
+    "Description": "This is a test case created via api composite",
+    "AccountId": "0018L00000KhVBPQA3"
+}

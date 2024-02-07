@@ -1,0 +1,47 @@
+[
+    {
+        "properties": [
+            {
+                "name": "salesforce.client.enabled",
+                "type": "java.lang.String",
+                "description": "A description for 'salesforce.consumer-secret'"
+            }
+        ]
+    },
+    {
+        "properties": [
+            {
+                "name": "salesforce.consumer-secret",
+                "type": "java.lang.String",
+                "description": "A description for 'salesforce.consumer-secret'"
+            }
+        ]
+    },
+    {
+        "properties": [
+            {
+                "name": "salesforce.consumer-key",
+                "type": "java.lang.String",
+                "description": "A description for 'salesforce.consumer-key'"
+            }
+        ]
+    },
+    {
+        "properties": [
+            {
+                "name": "salesforce.password",
+                "type": "java.lang.String",
+                "description": "A description for 'salesforce.password'"
+            }
+        ]
+    },
+    {
+        "properties": [
+            {
+                "name": "salesforce.username",
+                "type": "java.lang.String",
+                "description": "A description for 'salesforce.username'"
+            }
+        ]
+    }
+]
