@@ -1,40 +1,45 @@
-###
-# Query APEX API: Load Cases By AccountId
-GET http://localhost:8080/v1/apex/0018L00000KhVBPQA3/cases
-
-###
-# Query APEX API: Load Case By CaseId
-GET http://localhost:8080/v1/apex/cases/5008L000008CZgmQAG
-
-###
-# Query APEX API: Create Case
-POST http://localhost:8080/v1/apex/cases
-Content-Type: application/json
-
-{
-    "Subject": "Contestar Valores Fatura",
-    "Status": "New",
-    "Reason": "Contestação",
-    "Origin": "App",
-    "Description": "This is a test case created via api composite",
-    "OmniChannel__c": "true",
-    "AccountId": "0018L00000KhVBPQA3"
-}
 
 ###
 # Query Composite API: Load Cases By AccountId
 GET http://localhost:8080/v1/composite/0018L00000KhVBPQA3/cases
 
 ###
-# Query Composite API: Create Case
-POST http://localhost:8080/v1/composite/cases
+# Query Composite API: Create Case TRACKING_PROBLEM
+POST http://localhost:8080/v1/composite
 Content-Type: application/json
 
 {
-    "Subject": "Subject of the case",
-    "Status": "New",
-    "Reason": "Salesforce Reason",
-    "Origin": "App",
-    "Description": "This is a test case created via api composite",
-    "AccountId": "0018L00000KhVBPQA3"
+    "salesforceReason": "TRACKING_PROBLEM",
+    "customerId": "74674326230",
+    "productId": "0987654321",
+    "protocolNumber": "123456789",
+    "orderId": "REF#000000000"
+}
+
+###
+# Query Composite API: Create Case TRACKING_PROBLEM
+POST http://localhost:8080/v1/composite
+Content-Type: application/json
+
+{
+    "salesforceReason": "CHANGE_ADDRESS",
+    "customerId": "74674326230",
+    "productId": "0987654321",
+    "protocolNumber": "3425643534",
+    "modifyBillingAddress": "false",
+    "instalationAddress": {
+        "streetAddress": "Av. Paulista",
+        "locality": "Centro", 
+        "region": "SP",
+        "country": "BR",
+        "postalCode": "12345-678"
+    },
+    "technicianVisitOpt1": {
+        "dateOption": "2023-03-04",
+        "period": "MORNING"
+    },
+    "technicianVisitOpt2": {
+        "dateOption": "2023-03-07",
+        "period": "EVENING"
+    }
 }

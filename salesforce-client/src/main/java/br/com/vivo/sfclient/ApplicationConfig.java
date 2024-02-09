@@ -16,14 +16,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
-import br.com.vivo.sfclient.adapters.client.SalesforceCompositeClient;
-import br.com.vivo.sfclient.application.usecase.apex.CreateCaseApexUC;
-import br.com.vivo.sfclient.application.usecase.apex.DetailCaseByIdApexUC;
-import br.com.vivo.sfclient.application.usecase.apex.LoadCasesByAccountApexUC;
-import br.com.vivo.sfclient.application.usecase.composite.CreateCaseCompositeUC;
-import br.com.vivo.sfclient.application.usecase.composite.ListCaseCompositeUC;
-import br.com.vivo.sfclient.domain.ports.apex.SalesforceApexCasePort;
-import br.com.vivo.sfclient.domain.ports.composite.SalesforceCompositeCasePort;
+import br.com.vivo.sfclient.application.usecase.CreateChangeAddressCaseUC;
+import br.com.vivo.sfclient.application.usecase.CreateOrderTrackingCaseUC;
+import br.com.vivo.sfclient.application.usecase.SalesforceUseCaseFactory;
+import br.com.vivo.sfclient.domain.ports.SalesforceCompositePort;
 
 @Configuration
 public class ApplicationConfig implements WebMvcConfigurer {
@@ -49,27 +45,17 @@ public class ApplicationConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public LoadCasesByAccountApexUC loadCaseByAccountUC(SalesforceApexCasePort salesforcePort) {
-        return new LoadCasesByAccountApexUC(salesforcePort);
+    public CreateOrderTrackingCaseUC createOrderTrackingCaseUC(ObjectMapper mapper, SalesforceCompositePort sfClient) {
+        return new CreateOrderTrackingCaseUC(mapper, sfClient);
     }
 
     @Bean
-    public DetailCaseByIdApexUC detailCaseByIdUC(SalesforceApexCasePort salesforcePort) {
-        return new DetailCaseByIdApexUC(salesforcePort);
+    public CreateChangeAddressCaseUC createChangeAddressCaseUC(ObjectMapper mapper, SalesforceCompositePort sfClient) {
+        return new CreateChangeAddressCaseUC(mapper, sfClient);
     }
 
     @Bean
-    public CreateCaseApexUC createCaseUC(SalesforceApexCasePort salesforceApexCasePort) {
-        return new CreateCaseApexUC(salesforceApexCasePort);
-    }
-
-    @Bean
-    public ListCaseCompositeUC listCaseCompositeUC(SalesforceCompositeClient salesforceCompositeClient) {
-        return new ListCaseCompositeUC(salesforceCompositeClient);
-    }
-
-    @Bean
-    public CreateCaseCompositeUC createCaseCompositeUC(SalesforceCompositeCasePort salesforceCompositeCasePort) {
-        return new CreateCaseCompositeUC(salesforceCompositeCasePort);
+    public SalesforceUseCaseFactory salesforceUseCaseFactory(CreateOrderTrackingCaseUC createOrderTrackingCaseUC, CreateChangeAddressCaseUC createChangeAddressCaseUC) {
+        return new SalesforceUseCaseFactory(createOrderTrackingCaseUC, createChangeAddressCaseUC);
     }
 }
