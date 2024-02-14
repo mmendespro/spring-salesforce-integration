@@ -8,7 +8,7 @@ spring:
 salesforce:
   client:
     enabled: true
-  username: ${SALESFORCE_USER}
-  password: ${SALESFORCE_PASSWORD}
-  consumer-key: ${SALESFORCE_CONSUMER_KEY}
-  consumer-secret: ${SALESFORCE_CONSUMER_SECRET}
+  username: 
+  password: 
+  consumer-key: 
+  consumer-secret: 

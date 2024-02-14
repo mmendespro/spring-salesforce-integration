@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.vivo.sfclient.application.dto.SalesforceRequest;
@@ -20,7 +21,15 @@ public abstract class BaseUseCase<T> {
         this.sfClient = sfClient;
     }
     
-    protected abstract Optional<T> mapToDomain(Map<?,?> input);
+    protected Optional<T> mapToDomain(Map<?,?> input, Class<T> contentClass){
+        JsonNode jsonNode = mapper.valueToTree(input);
+        try {
+            var result = mapper.treeToValue(jsonNode, contentClass);
+            return Optional.of(result);
+        } catch (JsonProcessingException | IllegalArgumentException e) {
+            return Optional.empty();
+        }
+    }
     
     public abstract CompositeEntityRecordResponse handle(SalesforceRequest request) throws JsonProcessingException;
 }

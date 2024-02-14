@@ -27,7 +27,7 @@ public class CreateChangeAddressCaseUC extends BaseUseCase<ChangeAddressCase>{
 
     public CompositeEntityRecordResponse handle(SalesforceRequest request) throws JsonProcessingException {
         // convert request on domain object
-        var sfUserCase = mapToDomain(request).orElseThrow(() -> {throw new RuntimeException("Invalid payload converter");});
+        var sfUserCase = mapToDomain(request, ChangeAddressCase.class).orElseThrow(() -> {throw new RuntimeException("Invalid payload converter");});
 
         // Phases to create a case
         // -> Find the customer
@@ -83,16 +83,5 @@ public class CreateChangeAddressCaseUC extends BaseUseCase<ChangeAddressCase>{
         
         // Create and return
         return sfClient.save(List.of(sfCustReq, sfAssetReq, sfCase, sfCaseDetail));
-    }
-
-    @Override
-    protected Optional<ChangeAddressCase> mapToDomain(Map<?,?> input) {
-        JsonNode jsonNode = mapper.valueToTree(input);
-        try {
-            var result = mapper.treeToValue(jsonNode, ChangeAddressCase.class);
-            return Optional.of(result);
-        } catch (JsonProcessingException | IllegalArgumentException e) {
-            return Optional.empty();
-        }
     }
 }

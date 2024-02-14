@@ -2,11 +2,8 @@ package br.com.vivo.sfclient.application.usecase;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.vivo.sfclient.application.dto.SalesforceRequest;
@@ -28,7 +25,7 @@ public class CreateOrderTrackingCaseUC extends BaseUseCase<OrderTrackingCase>{
     @Override
     public CompositeEntityRecordResponse handle(SalesforceRequest request) throws JsonProcessingException {
         // convert request on domain object
-        var sfUserCase = mapToDomain(request).orElseThrow(() -> {throw new RuntimeException("Invalid payload converter");});
+        var sfUserCase = mapToDomain(request, OrderTrackingCase.class).orElseThrow(() -> {throw new RuntimeException("Invalid payload converter");});
 
         // Phases to create a case
         // -> Find the customer
@@ -77,16 +74,5 @@ public class CreateOrderTrackingCaseUC extends BaseUseCase<OrderTrackingCase>{
         
         // Create and return
         return sfClient.save(List.of(sfCustReq, sfAssetReq, sfCase, sfCaseDetail));
-    }
-
-    @Override
-    protected Optional<OrderTrackingCase> mapToDomain(Map<?,?> input) {
-        JsonNode jsonNode = mapper.valueToTree(input);
-        try {
-            var result = mapper.treeToValue(jsonNode, OrderTrackingCase.class);
-            return Optional.of(result);
-        } catch (JsonProcessingException | IllegalArgumentException e) {
-            return Optional.empty();
-        }
     }
 }
