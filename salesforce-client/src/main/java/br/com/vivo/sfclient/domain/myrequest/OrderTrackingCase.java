@@ -18,11 +18,11 @@ public class OrderTrackingCase extends BaseCase {
     }
     
     public static OrderTrackingCase openCase(String customerId, String productId, String protocolNumber, String orderId) {
-        return  new OrderTrackingCase(customerId, productId, protocolNumber, SalesforceStatus.OPEN, orderId);
+        return  new OrderTrackingCase(customerId, productId, protocolNumber, SalesforceStatus.IN_PROGRESS, orderId);
     }
 
     public static OrderTrackingCase closeCase(String customerId, String productId, String protocolNumber, String orderId) {
-        return new OrderTrackingCase(customerId, productId, protocolNumber, SalesforceStatus.CLOSED, orderId);
+        return new OrderTrackingCase(customerId, productId, protocolNumber, SalesforceStatus.CANCELLED, orderId);
     }
 
     public String getOrderId() {

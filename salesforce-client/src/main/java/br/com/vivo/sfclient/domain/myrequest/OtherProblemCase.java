@@ -18,11 +18,11 @@ public class OtherProblemCase extends BaseCase {
     }
 
     public static OtherProblemCase openCase(String customerId, String productId, String protocolNumber, String problemDescription) {
-        return  new OtherProblemCase(customerId, productId, protocolNumber, SalesforceStatus.OPEN, problemDescription);
+        return  new OtherProblemCase(customerId, productId, protocolNumber, SalesforceStatus.IN_PROGRESS, problemDescription);
     }
 
     public static OtherProblemCase closeCase(String customerId, String productId, String protocolNumber, String problemDescription) {
-        return new OtherProblemCase(customerId, productId, protocolNumber, SalesforceStatus.CLOSED, problemDescription);
+        return new OtherProblemCase(customerId, productId, protocolNumber, SalesforceStatus.CANCELLED, problemDescription);
     }    
 
     public String getProblemDescription() {

@@ -37,8 +37,11 @@ public abstract class BaseCase {
     }
 
     public enum SalesforceStatus {
-        OPEN,
-        CLOSED;
+        WAITING_ANSWER,
+        IN_PROGRESS,
+        EXPIRED,
+        CANCELLED,
+        COMPLETED;
     }
 
     public enum SalesforceReason {

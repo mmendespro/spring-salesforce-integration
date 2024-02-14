@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 @ControllerAdvice
-public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = { IllegalArgumentException.class, IllegalStateException.class, JsonProcessingException.class, RuntimeException.class })
     protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
