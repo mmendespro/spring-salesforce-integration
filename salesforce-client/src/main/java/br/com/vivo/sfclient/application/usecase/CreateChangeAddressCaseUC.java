@@ -7,8 +7,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.vivo.sfclient.application.dto.SalesforceRequest;
+import br.com.vivo.sfclient.application.ports.SalesforceCompositePort;
 import br.com.vivo.sfclient.domain.myrequest.ChangeAddressCase;
-import br.com.vivo.sfclient.domain.ports.SalesforceCompositePort;
 import br.com.vivo.sfclient.domain.salesforce.AccountRef;
 import br.com.vivo.sfclient.domain.salesforce.AssetRef;
 import br.com.vivo.sfclient.domain.salesforce.SalesforceCase;

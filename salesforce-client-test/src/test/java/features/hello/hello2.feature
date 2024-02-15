@@ -5,7 +5,6 @@ Background:
   * path '/api/hello'
 
 Scenario: Hello Peter
-
   * param name = 'Peter'
   * method GET
   * status 200

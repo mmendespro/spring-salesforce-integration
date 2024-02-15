@@ -11,16 +11,16 @@ public class TestRunner {
 
     @Karate.Test
     Karate dummyTest() {
-        return Karate.run("classpath:karate/features/dummy.feature");
+        return Karate.run("classpath:features/dummy.feature");
     }
 
     @Karate.Test
     Karate hello1Test() {
-        return Karate.run("classpath:karate/features/hello/hello1.feature");
+        return Karate.run("classpath:features/hello/hello1.feature");
     }
 
     @Karate.Test
     Karate hello2Test() {
-        return Karate.run("classpath:karate/features/hello/hello2.feature");
+        return Karate.run("classpath:features/hello/hello2.feature");
     }
 }

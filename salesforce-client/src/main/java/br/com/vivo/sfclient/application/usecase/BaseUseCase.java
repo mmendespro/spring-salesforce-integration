@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.vivo.sfclient.application.dto.SalesforceRequest;
-import br.com.vivo.sfclient.domain.ports.SalesforceCompositePort;
+import br.com.vivo.sfclient.application.ports.SalesforceCompositePort;
 import br.com.vivo.sfclient.model.composite.CompositeEntityRecordResponse;
 
 public abstract class BaseUseCase<T> {

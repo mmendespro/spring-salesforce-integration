@@ -1,4 +1,4 @@
-package br.com.vivo.sfclient.domain.ports;
+package br.com.vivo.sfclient.application.ports;
 
 import java.util.List;
 

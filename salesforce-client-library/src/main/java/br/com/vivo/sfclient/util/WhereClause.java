@@ -1,4 +1,4 @@
-package br.com.vivo.sfclient.application.util;
+package br.com.vivo.sfclient.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;

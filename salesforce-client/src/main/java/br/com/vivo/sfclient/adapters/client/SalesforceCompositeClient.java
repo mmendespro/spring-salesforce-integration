@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import br.com.vivo.sfclient.domain.ports.SalesforceCompositePort;
+import br.com.vivo.sfclient.application.ports.SalesforceCompositePort;
 import br.com.vivo.sfclient.model.composite.CompositeEntityRecord;
 import br.com.vivo.sfclient.model.composite.CompositeEntityRecordRequest;
 import br.com.vivo.sfclient.model.composite.CompositeEntityRecordResponse;

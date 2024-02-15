@@ -6,7 +6,7 @@ public class AssetRef extends CompositeEntityRecord {
 
     private static final String QUERY = "SELECT Id FROM Asset WHERE vlocity_cmt__ServiceIdentifier__c='%s'";
 
-    public AssetRef(String referenceId, String accountId) {
-        super("Asset", Method.GET, referenceId, String.format(QUERY, accountId));
+    public AssetRef(String referenceId, String assetId) {
+        super("Asset", Method.GET, referenceId, String.format(QUERY, assetId));
     }
 }

@@ -16,10 +16,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
+import br.com.vivo.sfclient.application.ports.SalesforceCompositePort;
 import br.com.vivo.sfclient.application.usecase.CreateChangeAddressCaseUC;
 import br.com.vivo.sfclient.application.usecase.CreateOrderTrackingCaseUC;
 import br.com.vivo.sfclient.application.usecase.SalesforceUseCaseFactory;
-import br.com.vivo.sfclient.domain.ports.SalesforceCompositePort;
 
 @Configuration
 public class ApplicationConfig implements WebMvcConfigurer {
