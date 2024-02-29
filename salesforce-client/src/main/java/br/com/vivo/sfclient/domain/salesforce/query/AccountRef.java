@@ -1,4 +1,4 @@
-package br.com.vivo.sfclient.domain.salesforce;
+package br.com.vivo.sfclient.domain.salesforce.query;
 
 import br.com.vivo.sfclient.model.composite.CompositeEntityRecord;
 
