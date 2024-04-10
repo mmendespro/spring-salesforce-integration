@@ -4,7 +4,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.intuit.karate.junit5.Karate;
 
-import br.com.vivo.Application;
+import br.com.sfclient.Application;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT, classes = {Application.class})
 public class TestRunner {

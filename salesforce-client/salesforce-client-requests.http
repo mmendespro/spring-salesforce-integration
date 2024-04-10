@@ -11,9 +11,9 @@ Content-Type: application/json
 {
     "salesforceReason": "TRACKING_PROBLEM",
     "customerId": "74674326230",
-    "productId": "0987654321",
+    "productId": "SBO-815I610JGR-025",
     "protocolNumber": "123456789",
-    "orderId": "REF#000000000"
+    "orderId": "REF#1111111"
 }
 
 ###
@@ -24,8 +24,8 @@ Content-Type: application/json
 {
     "salesforceReason": "CHANGE_ADDRESS",
     "customerId": "74674326230",
-    "productId": "0987654321",
-    "protocolNumber": "3425643534",
+    "productId": "11966551258",
+    "protocolNumber": "20230319135900",
     "modifyBillingAddress": "false",
     "instalationAddress": {
         "streetAddress": "Av. Paulista",

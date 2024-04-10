@@ -8,7 +8,7 @@ spring:
 salesforce:
   client:
     enabled: true
-  username: 
-  password: 
-  consumer-key: 
-  consumer-secret: 
+  username: a0159465@telefonica.b2cva.com.devmisoli
+  password: ${SALESFORCE_PWD:#Vivo2020}
+  consumer-key: 3MVG9ooRt4uZ_3TncGAK4Uy1TfbLpLiInYKC9Yx1_cxFlN5J5wBxxqyEOlkjXGeLV_UhQjQcCGkkFrLTy9oY2
+  consumer-secret: BDB40A8990D75E54D54C69D6597E51A4FEDB5A48B722D462FF3A8E047FD13548
