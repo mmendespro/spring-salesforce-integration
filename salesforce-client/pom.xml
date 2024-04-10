@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>salesforce-client</artifactId>
-    <groupId>br.com.vivo</groupId>
+    <groupId>net.local</groupId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
