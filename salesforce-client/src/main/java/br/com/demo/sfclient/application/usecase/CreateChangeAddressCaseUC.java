@@ -49,7 +49,7 @@ public class CreateChangeAddressCaseUC extends BaseUseCase<ChangeAddressCase>{
             sfCaseProps.put("ContactId", "@{AccountReturnedRef.records[0].vlocity_cmt__PrimaryContactId__c}");
             sfCaseProps.put("ComplainedAsset__c", "@{AssetRef.records[0].Id}");
             sfCaseProps.put("Protocol__c", sfUserCase.getProtocolNumber());
-            sfCaseProps.put("Origin", "APP Vivo");
+            sfCaseProps.put("Origin", "APP");
             sfCaseProps.put("Omnichannel__c", "true");
 
         var sfCase = new SalesforceCase(sfCaseProps, "NewCase");
